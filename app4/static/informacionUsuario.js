@@ -93,11 +93,32 @@ function getCookie(name)
 
 function cargarInformacionUsuario(idUsuario)
 {
-    /*
-    PREGUNTA 3
-    Desarrollar la función de javascript que permita consultar la ruta
-    obtenerInformacionUsuario?idUsuario=${idUsuario}
-    Revisar la implementacion realizada en clase para el detalle de las
-    tareas.
-    */
+    console.log("Se cargara la informacion del usuario %s",idUsuario)
+    fetch(`/obtenerDatosUsuario?idUsuario=${idUsuario}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        nombreUsuarioModal = document.getElementById('nombreUsuarioModal')
+        apellidoUsuarioModal = document.getElementById('apellidoUsuarioModal')
+        profesionUsuarioModal = document.getElementById('profesionUsuarioModal')
+        emailUsuarioModal = document.getElementById('emailUsuarioModal')
+        nroCelularModal = document.getElementById('nroCelularModal')
+        perfilUsuarioModal = document.getElementById('perfilUsuarioModal')
+
+        nombreUsuarioModal.value = ''
+        apellidoUsuarioModal.value = ''
+        profesionUsuarioModal.value = ''
+        emailUsuarioModal.value = ''
+        nroCelularModal.value = ''
+        perfilUsuarioModal.innerHTML = ''
+        
+        nombreUsuarioModal.value = data.nombre
+        apellidoUsuarioModal.value = data.apellido
+        profesionUsuarioModal.value = data.profesionUsuario
+        emailUsuarioModal.value = data.email
+        nroCelularModal.value = data.nroCelular
+        perfilUsuarioModal.innerHTML = data.perfilUsuario
+
+
+    })
 }

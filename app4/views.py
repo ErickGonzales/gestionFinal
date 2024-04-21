@@ -148,15 +148,19 @@ def react1(request):
 
 def obtenerDatosUsuario(request):
     idUsuario = request.GET.get('idUsuario')
-    """
-    Pregunta 2
-    Esta funcion devolvera los campos que se necesitan 
-    cargar en la ventana modal para poder ser editados
-    Con el id del usuario se puede obtener el objeto y devolver
-    el objeto Json con la informacion necesaria.
-    """
+    usuariResponsable = User.objects.get(id=idUsuario)
+    usuarioSeleccionado = datosUsuario.objects.get(id=idUsuario)
+    
     return JsonResponse({
-        'resp':'200'
+        'idUsuario':usuarioSeleccionado.id,
+        'nombre':usuariResponsable.first_name,
+        'apellido':usuariResponsable.last_name,
+        'email':usuariResponsable.email,
+        'nroCelular':usuarioSeleccionado.nroCelular,
+        'profesionUsuario':usuarioSeleccionado.profesionUsuario,
+        'perfilUsuario':usuarioSeleccionado.perfilUsuario,
+        'fechaCreacion':usuarioSeleccionado.fechaCreacion,
+
     })
 
 def actualizarUsuario(request):

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -164,6 +165,46 @@
                     <input id="idUsuario" name="idUsuario" value="">
                 </div>
                 <div class="modal-body">
+                    <div class="row form-group justify-content-around mb-3">
+                        <div class="col-5">
+                            <label>Username :</label>
+                            <input class="form-control" type="text" id="usernameUsuarioModal" readonly="readonly" required>
+                        </div>
+                    </div>
+                    <div class="row form-group justify-content-around mb-3">
+                        <div class="col-5">
+                            <label>Nombre :</label>
+                            <input class="form-control" type="text" id="nombreUsuarioModal" required>
+                        </div>
+                        <div class="col-5">
+                            <label>Apellido :</label>
+                            <input class="form-control" type="text" id="apellidoUsuarioModal" required>
+                        </div>
+                    </div>
+                    <div class="row form-group justify-content-around mb-3">
+                        <div class="col-5">
+                            <label>Profesion :</label>
+                            <input class="form-control" type="text" id="profesionUsuarioModal" required>
+                        </div>
+                        <div class="col-5">
+                            <label>Email :</label>
+                            <input class="form-control" type="email" id="emailUsuarioModal" readonly="readonly" required>
+                        </div>
+                    </div>
+                    <div class="row form-group justify-content-around mb-3">
+                        <div class="col-5">
+                            <label>Nro de celular :</label>
+                            <input class="form-control" type="text" id="nroCelularModal" required>
+                        </div>
+                        <div class="col-5">
+                        </div>
+                    </div>
+                    <div class="row form-group justify-content-around mb-3">
+                        <div class="col-11">
+                            <label>Perfil del usuario :</label>
+                            <textarea class="form-control" type="text" id="perfilUsuarioModal" rows="4" required></textarea>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
